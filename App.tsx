@@ -11,6 +11,7 @@ import {
   Pressable,
   StyleSheet,
   useColorScheme,
+  ScrollView,
 } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
@@ -76,11 +77,33 @@ export default function App() {
     //     </Pressable>
     //   </SafeAreaView>
     // </SafeAreaProvider>
-    <SafeAreaView style={styles.container}>
-      <View style={styles.box1} />
-      <View style={styles.box2} />
-      <View style={styles.box3} />
-    </SafeAreaView>
+
+    // <SafeAreaView style={styles.container}>
+    //   <View style={styles.box1} />
+    //   <View style={styles.box2} />
+    //   <View style={styles.box3} />
+    // </SafeAreaView>
+
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <ScrollView
+          contentContainerStyle={{ gap: 10 }}
+          horizontal
+          style={styles.container}
+        >
+          <View style={styles.box1} />
+          <View style={styles.box2} />
+          <View style={styles.box3} />
+          <View style={styles.box3} />
+          <View style={styles.box3} />
+          <View style={styles.box3} />
+          <View style={styles.box3} />
+          <View style={styles.box3} />
+          <View style={styles.box3} />
+          <View style={styles.box3} />
+        </ScrollView>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
@@ -118,6 +141,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+    gap: 10, // Space between children
     // flexDirection: 'row', // Arrange children in a row
     // flexWrap: 'wrap', // Allow wrapping to the next line
     // justifyContent: 'flex-start', // Align children to the start of the row
@@ -129,13 +153,22 @@ const styles = StyleSheet.create({
   box1: {
     flex: 1, // 1/6 of the container height
     backgroundColor: 'red',
+    height: 80, // Set a fixed height for the boxes
+    width: 80, // Set a fixed width for the boxes
+    borderRadius: 50, // Optional: Add border radius for rounded corners
   },
   box2: {
-    flex: 2, // 2/6 of the container height
+    flex: 1, // 2/6 of the container height
     backgroundColor: 'green',
+    height: 80, // Set a fixed height for the boxes
+    width: 80, // Set a fixed width for the boxes
+    borderRadius: 50, // Optional: Add border radius for rounded corners
   },
   box3: {
-    flex: 3, // 3/6 of the container height
+    flex: 1, // 3/6 of the container height
     backgroundColor: 'blue',
+    height: 80, // Set a fixed height for the boxes
+    width: 80, // Set a fixed width for the boxes
+    borderRadius: 50, // Optional: Add border radius for rounded corners
   },
 });
